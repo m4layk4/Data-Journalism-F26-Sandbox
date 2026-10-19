@@ -1,6 +1,18 @@
 <!DOCTYPE html?>
 <head>
   <title>My Online Portfolio</title>
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+  <script scr = "https://cdn.jddelivr.net/npm/chart.js"> </script>
+  <style>
+    .chart-container {
+      width:90%;
+      max-width: 800px
+      margin: 30px auto; 
+    }
+    
+  </style>
+  
 </head>
 
 <body>
@@ -10,6 +22,53 @@
     <img scr = "https://images.trvl-media.com/place/502071/db50c0ed-a120-47af-b64b-066bb1434b10.jpg">
 
   </div>
+
+  <div class = "chart-container">
+    <canvas id = chart> </canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById("chart");
+    new Chart(ctx, {
+      type : "line", 
+      data : { 
+        labels : ["Monday", "Tuesday" , "Wednesday" , "Thursday" , "Friday"],
+        dataset: [{
+          label: "Coffee Spending", 
+          data: [5.00, 10.00, 10.00, 15.00, 15.00],
+
+          borderColor: "#FF0145",
+          backgroundColor: "#E3DCDC",
+          borderWidth : 3, 
+          fill:true,
+          tension : 0.35, 
+          pointRadius : 4, 
+          pointBackgroundColor :"#FF0145"
+        }]
+                  },
+      options : {
+        responsive"true,
+        maintainsAspectRatio : true,
+
+        plugins: {
+          legend:{
+            display:true
+          }
+          
+        },
+        scales : {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+      
+    });
+        
+
+        
+                  
+  </script>
 
   
 
